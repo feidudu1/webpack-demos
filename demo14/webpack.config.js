@@ -1,12 +1,8 @@
-var CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 
 module.exports = {
-    entry: {
-        bundle1: './main1.jsx',
-        bundle2: './main2.jsx'
-    },
+    entry: './main.jsx',
     output: {
-        filename: '[name].js'
+        filename: 'bundle.js'
     },
     module: {
         loaders: [
@@ -20,7 +16,9 @@ module.exports = {
             }
         ]
     },
-    plugins: [
-        new CommonsChunkPlugin('init')
-    ]
+    externals: {
+        // require('data') is external and available
+        //  on the global var data
+        'data': 'data'
+    }
 };
