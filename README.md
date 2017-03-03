@@ -534,6 +534,7 @@ Now you don't need to write `index.html` by hand and don't have to open browser 
 ## Demo09: Environment flags ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo09))
 
 You can enable some codes only in development environment with environment flags.
+
 todo:需要查资料进一步理解 demo09~demo11  10和11暂时不用进一步
 main.js
 
@@ -722,7 +723,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CommonsChunkPlugin('init.js')
+    new CommonsChunkPlugin('init')
   ]
 }
 ```
@@ -764,12 +765,16 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */'vendor', /* filename= */'vendor.js')
+    new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor', //chunk name
+        filename: 'vendor.js'
+    })
+    //该版本该插件只能有一个参数
   ]
 };
 ```
 
-If you want a module available as variable in every module, such as making $ and jQuery available in every module without writing `require("jquery")`. You should use `ProvidePlugin` ([Official doc](http://webpack.github.io/docs/shimming-modules.html)).
+**If you want a module available as variable in every module, such as making $ and jQuery available in every module without writing `require("jquery")`. You should use `ProvidePlugin`** ([Official doc](http://webpack.github.io/docs/shimming-modules.html)).
 
 ```javascript
 // main.js
