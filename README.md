@@ -25,7 +25,7 @@ Now, play with the source files under the repo's demo* directories.
 
 ```bash
 $ cd demo01
-$ webpack-dev-server
+$ webpack-dev-server  //之前我用的npm start,todo:本项目跨文件夹需要另外设置
 //如果要打包生成demo中的bundle文件，则要先输入如下命令，webpack-dev-server只是启服务器和热更新
 $ webpack
 ```
@@ -180,7 +180,8 @@ module.exports = {
 ```
 
 ## Demo03: Babel-loader ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo03))
-
+如果不是直接下载本repo的package.json，则要先安装package.json中的babel-core、babel-preset-es2015、babel-preset-react、react、react-dom、react-router?
+同时atom要安装language-babel包（否则不能编辑，或编辑报错）？
 Loaders are preprocessors which transform a resource file of your app ([more info](http://webpack.github.io/docs/using-loaders.html)). For example, [Babel-loader](https://www.npmjs.com/package/babel-loader) can transform JSX/ES6 file into JS file. Official doc has a complete list of [loaders](http://webpack.github.io/docs/list-of-loaders.html).
 
 `main.jsx` is a JSX file.
@@ -347,7 +348,7 @@ module.exports = {
 };
 ```
 
-[url-loader](https://www.npmjs.com/package/url-loader) transforms image files. If the image size is smaller than 8192 bytes, it will be transformed into Data URL; otherwise, it will be transformed into normal URL. As you see, question mark(?) is used to pass parameters into loaders.
+[url-loader](https://www.npmjs.com/package/url-loader) transforms image files. **If the image size is smaller than 8192 bytes, it will be transformed into Data URL; otherwise, it will be transformed into normal URL.** As you see, question mark(?) is used to pass parameters into loaders.
 
 After launching the server, `small.png` and `big.png` will have the following URLs.
 
@@ -436,10 +437,11 @@ Launch the server.
 $ webpack-dev-server
 ```
 
-Visit http://127.0.0.1:8080 , you'll find that only second `h1` is red, because its CSS is local scoped, and both `h2` is blue, because its CSS is global scoped.
+Visit http://127.0.0.1:8080 , **you'll find that only second `h1` is red, because its CSS is local scoped, and both `h2` is blue, because its CSS is global scoped.**
 
 ## Demo07: UglifyJs Plugin ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo07))
 
+需要安装webpack,一般在生产环境会压缩代码，uglify默认会混淆代码
 Webpack has a plugin system to expand its functions. For example, [UglifyJs Plugin](http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin) will minify output(`bundle.js`) JS codes.
 
 main.js
@@ -489,7 +491,7 @@ var o="Hello";o+=" World",document.write("<h1>"+o+"</h1>")
 ## Demo08: HTML Webpack Plugin and Open Browser Webpack Plugin ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo08))
 
 This demo shows you how to load 3rd-party plugins.
-
+需要安装html-webpack-plugin和open-browser-webpack-plugin
 [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin) could create `index.html` for you, and [open-browser-webpack-plugin](https://github.com/baldore/open-browser-webpack-plugin) could open a new browser tab when Webpack loads.
 
 main.js
@@ -532,7 +534,7 @@ Now you don't need to write `index.html` by hand and don't have to open browser 
 ## Demo09: Environment flags ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo09))
 
 You can enable some codes only in development environment with environment flags.
-
+todo:需要查资料进一步理解 demo09~demo11  10和11暂时不用进一步
 main.js
 
 ```javascript
