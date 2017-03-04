@@ -6,7 +6,7 @@ module.exports = {
         vendor: ['jquery']
     },
     output: {
-        filename: 'bundle.js'
+        filename: 'bundle.js'  //只有main.js的内容
     },
     plugins: [
       new webpack.optimize.CommonsChunkPlugin({

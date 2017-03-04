@@ -442,6 +442,7 @@ Visit http://127.0.0.1:8080 , **you'll find that only second `h1` is red, becaus
 ## Demo07: UglifyJs Plugin ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo07))
 
 需要安装webpack,一般在生产环境会压缩代码，uglify默认会混淆代码
+
 Webpack has a plugin system to expand its functions. For example, [UglifyJs Plugin](http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin) will minify output(`bundle.js`) JS codes.
 
 main.js
@@ -491,7 +492,9 @@ var o="Hello";o+=" World",document.write("<h1>"+o+"</h1>")
 ## Demo08: HTML Webpack Plugin and Open Browser Webpack Plugin ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo08))
 
 This demo shows you how to load 3rd-party plugins.
+
 需要安装html-webpack-plugin和open-browser-webpack-plugin
+
 [html-webpack-plugin](https://github.com/ampedandwired/html-webpack-plugin) could create `index.html` for you, and [open-browser-webpack-plugin](https://github.com/baldore/open-browser-webpack-plugin) could open a new browser tab when Webpack loads.
 
 main.js
@@ -839,6 +842,14 @@ module.exports = {
   }
 };
 ```
+```html
+<html>
+  <body>
+    <script src="data.js"></script>
+    <script src="bundle.js"></script>
+  </body>
+</html>
+```
 
 Now, you require `data` as a module variable in your script. but it actually is a global variable.
 
@@ -955,7 +966,11 @@ index.html
 </html>
 ```
 
-## Demo16: React router ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo16))
+## Demo16: React router
+
+还没做
+
+ ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo16))
 
 This demo uses webpack to build [React-router](https://github.com/rackt/react-router/blob/0.13.x/docs/guides/overview.md)'s official example.
 
